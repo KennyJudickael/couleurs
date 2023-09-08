@@ -64,9 +64,8 @@ def coloration_graphique(nombre_de_sommets, nombre_de_couleurs):
                 color="k",
             )
 
-        plt.axis("off")  # Désactive les axes
-        plt.xticks([])  # Masque les graduations sur l'axe x
-        plt.yticks([])  # Masque les graduations sur l'axe y
+        plt.legend()
+        plt.title("")
         plt.show()
     else:
         print("Aucune solution trouvée.")
