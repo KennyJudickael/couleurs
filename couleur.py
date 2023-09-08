@@ -35,7 +35,7 @@ def coloration_graphique(nombre_de_sommets, nombre_de_couleurs):
     if coloration_util(0, coloration, nombre_de_couleurs):
         print("Solution trouvée :")
         for sommet, couleur in enumerate(coloration):
-            print(f"Sommet {sommet + 1} : Couleur {couleur}")
+            print(f"Point {sommet + 1} : Couleur {couleur}")
 
         # Création du graphique
         couleurs = [
@@ -53,7 +53,7 @@ def coloration_graphique(nombre_de_sommets, nombre_de_couleurs):
                 positions[sommet][1],
                 s=100,
                 c=couleurs[couleur - 1],
-                label=f"Sommet {sommet + 1}",
+                label=f"Point {sommet + 1}",
             )
 
         # Ajout des lignes de liaison entre les sommets reliés
@@ -64,8 +64,9 @@ def coloration_graphique(nombre_de_sommets, nombre_de_couleurs):
                 color="k",
             )
 
-        plt.legend()
-        plt.title("Coloration du graphe")
+        plt.axis("off")  # Désactive les axes
+        plt.xticks([])  # Masque les graduations sur l'axe x
+        plt.yticks([])  # Masque les graduations sur l'axe y
         plt.show()
     else:
         print("Aucune solution trouvée.")
